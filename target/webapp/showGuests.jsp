@@ -18,9 +18,12 @@
 				<th>firstname</th>
 				<th>lastname</th>
 				<th>email</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tr>
 		
 			<%
+			String id = request.getParameter("id");
 				try{
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					Connection conn=DriverManager.getConnection("jdbc:mysql://beb265f3aa4329:3e142473@us-cdbr-east-03.cleardb.com/heroku_0c282ad41a365e8","beb265f3aa4329","3e142473");
@@ -40,6 +43,10 @@
 						<td><%= rs.getString("firstname") %></td>
 						<td><%= rs.getString("lastname") %></td>
 						<td><%= rs.getString("email") %></td>
+						<td><a href="<%= response.encodeURL(request.getContextPath() + "/updateGuest.jsp?id="+ rs.getInt("id")+"&firstname="+ 
+								rs.getString("firstname")+"&lastname="+ rs.getString("lastname")+"&email="+ rs.getString("email")) %>">Update</a></td>
+    					<td><a href="<%= response.encodeURL(request.getContextPath() + "/deleteGuest.jsp?id="+ rs.getInt("id"))%>">Delete</a></td>
+
 					</tr>
 				
 			<%

@@ -10,7 +10,6 @@
 	</head>
 	
 	<body>
-	
 		<form action = "createGuest.jsp" method = "post">
 			<label for="firstname">First Name:</label>
 	        <input type = "text" name = "firstname"/>
