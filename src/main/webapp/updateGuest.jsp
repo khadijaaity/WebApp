@@ -11,7 +11,6 @@
 	
 	<body>
 		<h1>JDBC Connection Update</h1>
-	
 		<form method="GET" action="updateGuest.jsp">
 			<input type="hidden" value="<%=request.getParameter("id") %>" name="id">
 			<input type="text" value="<%=request.getParameter("firstname") %>" name="firstnameUpdated">
@@ -49,8 +48,7 @@
 			}
 	    }
 	%>
-	
-	
+
 		<br>
 		<a href="<%= response.encodeURL(request.getContextPath() + "/showGuests.jsp") %>"> Show Guests </a>
 		<a href="<%= response.encodeURL(request.getContextPath() + "/index.jsp") %>"> Go to insert Guests </a>

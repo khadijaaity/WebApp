@@ -19,7 +19,6 @@
 				DatabaseProperties databaseProperties = DatabaseProperties.getInstancia();
 	  			out.write(databaseProperties.getPropiedad("server"));
 
-				
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection conn=DriverManager.getConnection("jdbc:mysql://beb265f3aa4329:3e142473@us-cdbr-east-03.cleardb.com/heroku_0c282ad41a365e8","beb265f3aa4329","3e142473");
 				

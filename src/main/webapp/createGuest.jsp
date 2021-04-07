@@ -12,7 +12,6 @@
 	<body>
 	
 		<%
-		
 			String firstname=request.getParameter("firstname");
 			String lastname=request.getParameter("lastname");
 			String email=request.getParameter("email");

@@ -10,7 +10,7 @@
 	</head>
 	
 	<body>
-		<h1>Retrieve data from database in jsp</h1>
+		<h1>Show data from database in jsp</h1>
 		
 		<table>
 			<tr>

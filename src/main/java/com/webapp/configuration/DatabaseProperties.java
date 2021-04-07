@@ -13,6 +13,7 @@ public class DatabaseProperties {
 	private DatabaseProperties() {
 
 		p = new Properties();
+
 		try {
 			p.load(new FileInputStream(new File("dev-database.properties")));
 		} catch (IOException e) {
