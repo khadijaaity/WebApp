@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Insert title here</title>
-		<link rel="stylesheet" type="text/css"  href="css/style.css"/>
+		<link rel="stylesheet" type="text/css"  href="../css/style.css"/>
 	</head>
 	<body>
 	<h1>DELETE data from database in jsp</h1>
@@ -21,12 +21,12 @@
 						  databaseProperties.getDatabaseUser(),databaseProperties.getDatabasePwd());
 		        Statement st = conn.createStatement();
 				
-				out.write("DELETE FROM Myguests WHERE id="+id);
-		        st.executeUpdate("DELETE FROM Myguests WHERE id="+id);
+				out.write("DELETE FROM productos WHERE id="+id);
+		        st.executeUpdate("DELETE FROM productos WHERE id="+id);
 		        
 		        conn.close();
 		        
-		        response.sendRedirect(request.getContextPath() + "/showGuests.jsp");
+		        response.sendRedirect(request.getContextPath() + "/StoreProcedure/showProducts.jsp");
 				
 				out.write("Deleted Successfully!");
 			

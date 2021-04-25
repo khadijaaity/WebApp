@@ -2,13 +2,13 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*"%>  
 <%@ page import="com.webapp.configuration.DatabaseProperties"%>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>JDBC Connection example</title>
-		<link rel="stylesheet" type="text/css"  href="css/style.css"/>
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css"  href="../css/style.css"/>
 	</head>
-	
 	<body>
 		<h1>JDBC Connection example</h1>
 		
@@ -36,10 +36,10 @@
 		%>
 		
 		<br/>
-		<a href="<%= response.encodeURL(request.getContextPath() +"/addGuest.jsp") %>">Add Guest</a>
+		<a href="<%= response.encodeURL(request.getContextPath() +"/StoreProcedure/addProduct.jsp") %>">Add Product</a>
 		
 		<br/>
-		<a href="<%= response.encodeURL(request.getContextPath() +"/showGuests.jsp") %>">Show Guests</a>
+		<a href="<%= response.encodeURL(request.getContextPath() +"/StoreProcedure/showProducts.jsp") %>">Show Products</a>
 		
 	</body>
 </html>

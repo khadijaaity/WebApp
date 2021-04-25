@@ -2,10 +2,12 @@
 
 body{
 	font-family: calibri;
+	margin:4em;
 }
 
 form{
 	width: 50%;
+	
 }
 
 table{
@@ -42,6 +44,7 @@ td,td,th{
 	padding: 5px;
 	border: 1px solid rgba(255,0,0,0.5);
 	text-align: center;
+	width: 120px;
 }
 
 tr:first-of-type{
