@@ -7,15 +7,15 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Insert title here</title>
-		<link rel="stylesheet" type="text/css"  href="css/style.css"/>
+		<link rel="stylesheet" type="text/css"  href="../css/style.css"/>
 	</head>
 	
 	<body>
 	
 		<%
-			String firstname=request.getParameter("firstname");
-			String lastname=request.getParameter("lastname");
-			String email=request.getParameter("email");
+			String nombre=request.getParameter("nombre");
+			String estado=request.getParameter("estado");
+			String precio=request.getParameter("precio");
 		
 			try {
 				DatabaseProperties databaseProperties = DatabaseProperties.getInstancia();
@@ -27,7 +27,7 @@
 				
 				Statement st=conn.createStatement();
 				
-				int i=st.executeUpdate("INSERT INTO MyGuests (firstname, lastname, email)" + "VALUES('"+firstname+"','"+lastname+"','"+email+"')");
+				int i=st.executeUpdate("INSERT INTO productos (nombre, estado, precio)" + "VALUES('"+nombre+"','"+estado+"','"+precio+"')");
 				
 				out.println("Data is successfully inserted!");
 				conn.close();

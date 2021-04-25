@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*"%>   
+<%@ page import="com.webapp.configuration.DatabaseProperties"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +11,7 @@
 	</head>
 	
 	<body>
-		<h1>Show data from database in jsp</h1>
+		<h1>Retrieve data from database in jsp</h1>
 		
 		<table>
 			<tr>
@@ -25,16 +26,19 @@
 			<%
 			String id = request.getParameter("id");
 				try{
-					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection conn=DriverManager.getConnection("jdbc:mysql://beb265f3aa4329:3e142473@us-cdbr-east-03.cleardb.com/heroku_0c282ad41a365e8","beb265f3aa4329","3e142473");
+					DatabaseProperties databaseProperties = DatabaseProperties.getInstancia();
+				      
+				    Class.forName(databaseProperties.getDatabaseDriver());  
+					Connection conn=DriverManager.getConnection(databaseProperties.getConnectionString(),
+							  databaseProperties.getDatabaseUser(),databaseProperties.getDatabasePwd());
+					out.write("Connected!");
 					
-					out.write("Connected! ");
-					
-					String query = "SELECT * FROM MyGuests";
-					
-					Statement st = conn.createStatement();
-					
-					ResultSet rs = st.executeQuery(query);
+					String query = "SELECT * FROM Myguests";
+				      // create the java statement
+				    Statement st = conn.createStatement();
+				      
+				      // execute the query, and get a java resultset
+				    ResultSet rs = st.executeQuery(query);
 				
 				while (rs.next()){	
 			%>
@@ -67,7 +71,7 @@
 		<a href="<%= response.encodeURL(request.getContextPath() +"/addGuest.jsp") %>">Add Guest</a>
 		
 		<br/>
-		<a href="<%= response.encodeURL(request.getContextPath() +"/index.jsp") %>">Inicio</a>
+		<a href="<%= response.encodeURL(request.getContextPath() +"/index.jsp") %>">Home</a>
 		
 	</body>
 </html>
